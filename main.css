@@ -1,0 +1,29 @@
+:root {
+    --border-color: #291D4D;
+    --dialogue-background: #FFF3B4;
+  
+    --menu-background: #FFE8D2;
+    --menu-border-color: #A48465;
+    --menu-font-color: #3A160D;
+    --menu-selected-background: #7FC2FF;
+  
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    background: orange;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+.anahita {
+    position: relative;
+    width: 352px;
+    height: 198px;
+    margin: 0 auto;
+}
+.anahita canvas {
+    width: 352px;
+    height: 198px;
+}
