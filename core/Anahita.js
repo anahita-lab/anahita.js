@@ -1,6 +1,6 @@
 import World from './World.js'
 
-export function start() {
+export function init() {
 
     const world = new World({
         element: document.querySelector(".anahita")

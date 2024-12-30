@@ -13,4 +13,15 @@ export default class World {
     init() {
         console.log("Hey!")
     }
+
+    loop() {
+        this.context.drawImage(
+            this.map.lowerLayer,
+            0,
+            0);
+    }
+
+    setMap(map) {
+        this.map = map
+    }
 }
