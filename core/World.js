@@ -15,11 +15,11 @@ export default class World {
     }
 
     loop() {
-        const image = new Image();
-        image.onload = function () {
-            this.context.drawImage(image, 0, 0);
-        }.bind(this)
-        image.src = this.map.lowerLayer.src;
+        this.map.renderLowerLayer(this.context);
+        
+        requestAnimationFrame(() => {
+            this.loop();
+        }); 
     }
 
     setMap(map) {

@@ -12,4 +12,20 @@ export class AbstractMap {
             ()=>{}
         );
     }
+
+    renderLowerLayer(context) {
+        context.drawImage(
+            this.lowerLayer, 
+            0,
+            0
+        );
+    }
+
+    renderUpperLayer(context) {
+        context.drawImage(
+            this.upperLayer,
+            0,
+            0
+        );
+    }
 }
