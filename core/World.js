@@ -4,18 +4,26 @@ export default class World {
 
     constructor(config) {
         this.element = config.element;
-        this.canvas = this.element.querySelector("canvas");
-        this.context = this.canvas.getContext("2d");
-        this.keyboardController = null;
-        this.map = null;
+        this.map = config.map;
     }
 
     init() {
-        console.log("Hey!")
+        this.canvas = this.element.querySelector("canvas");
+        this.context = this.canvas.getContext("2d");
+        Object.keys(this.map.sprites)
+        .forEach(key => {
+            let sprite = this.map.sprites[key];
+            sprite.id = key;
+        });
     }
 
     loop() {
         this.map.renderLowerLayer(this.context);
+
+        Object.values(this.map.sprites)
+            .forEach(sprite => {
+                sprite.render(this.context);
+            });
         
         requestAnimationFrame(() => {
             this.loop();

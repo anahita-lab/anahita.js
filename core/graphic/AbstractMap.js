@@ -3,6 +3,7 @@ import utils from '../Utils.js'
 export class AbstractMap {
 
     constructor(config) {
+        this.sprites = config.sprites;
         this.lowerLayer = utils.loadImage(
             config.lowerLayer,
             ()=>{}
