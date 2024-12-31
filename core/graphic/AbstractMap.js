@@ -3,6 +3,7 @@ import utils from '../Utils.js'
 export class AbstractMap {
 
     constructor(config) {
+        this.tileSize = config.tileSize;
         this.sprites = config.sprites;
         this.lowerLayer = utils.loadImage(
             config.lowerLayer,
@@ -28,5 +29,9 @@ export class AbstractMap {
             0,
             0
         );
+    }
+
+    positionInGrid(number){
+        return number * this.tileSize;
     }
 }

@@ -1,7 +1,5 @@
 export default class World {
 
-    static TILE = 16;
-
     constructor(config) {
         this.element = config.element;
         this.map = config.map;
@@ -14,6 +12,9 @@ export default class World {
         .forEach(key => {
             let sprite = this.map.sprites[key];
             sprite.id = key;
+            sprite.map = this.map;
+            sprite.x = sprite.map.positionInGrid(sprite.x);
+            sprite.y = sprite.map.positionInGrid(sprite.y);
         });
     }
 
